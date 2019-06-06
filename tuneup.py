@@ -6,6 +6,7 @@ __author__ = "???"
 
 import cProfile
 import pstats
+import timeit
 
 
 def profile(func):
@@ -41,7 +42,9 @@ def find_duplicate_movies(src):
 
 def timeit_helper():
     """Part A:  Obtain some profiling measurements using timeit"""
-    # YOUR CODE GOES HERE
+    t = timeit.Timer(stmt='main')
+    result = t.repeat(repeat=7, number=3)
+    print(result)
 
 
 def main():
